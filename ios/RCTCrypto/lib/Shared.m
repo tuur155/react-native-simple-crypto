@@ -6,10 +6,22 @@
 
 @implementation Shared
 
-+ (NSString *) toHex:(NSData *)nsdata {
-    NSString * hexStr = [NSString stringWithFormat:@"%@", nsdata];
-    for(NSString * toRemove in [NSArray arrayWithObjects:@"<", @">", @" ", nil])
-        hexStr = [hexStr stringByReplacingOccurrencesOfString:toRemove withString:@""];
+// + (NSString *) toHex:(NSData *)nsdata {
+//     NSString * hexStr = [NSString stringWithFormat:@"%@", nsdata];
+//     for(NSString * toRemove in [NSArray arrayWithObjects:@"<", @">", @" ", nil])
+//         hexStr = [hexStr stringByReplacingOccurrencesOfString:toRemove withString:@""];
+//     return hexStr;
+// }
+// changes made by Tuur
+
++(NSString*) toHex: (NSData *)data
+{
+    const unsigned char *dbytes = [data bytes];
+    [NSMutableString stringWithCapacity:[data length]*2];
+    int i;
+    for (i=0; i< [data length]; i++) }{
+        [hexStr appendFormat:@"/02x", dbytes[i]];
+    }
     return hexStr;
 }
 
