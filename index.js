@@ -1,5 +1,5 @@
 "use strict";
-
+// changes made by Tuur
 import base64js from "base64-js";
 import hexLite from "hex-lite";
 import { NativeModules } from "react-native";
