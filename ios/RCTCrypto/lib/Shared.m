@@ -14,14 +14,14 @@
 // }
 // changes made by Tuur
 
-+(NSString*) toHex: (NSData *)data
++(NSString*) toHex:(NSData *)data
 {
     const unsigned char *dbytes = [data bytes];
     NSMutableString *hexStr =
     [NSMutableString stringWithCapacity:[data length]*2];
     int i;
     for (i=0; i< [data length]; i++) {
-        [hexStr appendFormat:@"/02x", dbytes[i]];
+        [hexStr appendFormat:@"%02x", dbytes[i]];
     }
     return hexStr;
 }
